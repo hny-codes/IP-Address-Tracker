@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  /* Viewport */
+  --view-mobile: 375px;
+  --view-desktop: 1440px;
+
+  /* Colors */
+  --clr-very-dark-gray: hsl(0, 0%, 17%);
+  --clr-dark-gray: hsl(0, 0%, 59%);
+
+  /* Typography */
+  --font-size: 1.125rem;
+
+  /* Font Family */
+  
+}
