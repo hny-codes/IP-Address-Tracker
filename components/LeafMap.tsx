@@ -6,21 +6,27 @@ import 'leaflet/dist/leaflet.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
 import 'leaflet-defaulticon-compatibility';
 
-const Map = () => {
+type MapCoord = {
+  lat: number;
+  lng: number;
+};
+
+const Map = ({ lat, lng }: MapCoord) => {
   return (
     <MapContainer
-      center={[51.505, -0.09]}
+      center={[lat, lng]}
       zoom={13}
-      scrollWheelZoom={false}
+      scrollWheelZoom={true}
       style={{ height: 400, width: '100%' }}
     >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
-      <Marker position={[51.505, -0.09]}>
+      <Marker position={[lat, lng]}>
         <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
+          Your Coordinates: <br />
+          {lat} | {lng}
         </Popup>
       </Marker>
     </MapContainer>

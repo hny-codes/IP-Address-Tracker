@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <main className=''>
       <div className=''>
-        <Map />
+        <Map lat={res.location.lat} lng={res.location.lng} />
         <p>
           {res.location.lat} {res.location.lng}
         </p>
