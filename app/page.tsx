@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { getIpData, getIpLocationData } from '@/lib/getIpData';
+import InputSection from './components/InputSection';
 
 export default async function Home() {
   const res: IPLocation = await getIpLocationData('8.8.8.8');
@@ -12,10 +13,7 @@ export default async function Home() {
   return (
     <main className=''>
       <div className=''>
-        <Map lat={res.location.lat} lng={res.location.lng} />
-        <p>
-          {res.location.lat} {res.location.lng}
-        </p>
+        <InputSection />
       </div>
     </main>
   );
