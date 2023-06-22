@@ -10,6 +10,10 @@ module.exports = {
       fontFamily: {
         rubik: ['var(--font-rubik)'],
       },
+      colors: {
+        'very-dark-gray': 'var(--clr-very-dark-gray',
+        'dark-gray': 'var(--clr-dark-gray)',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
