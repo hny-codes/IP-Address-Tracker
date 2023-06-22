@@ -29,15 +29,15 @@ export default function InputSection({
 
   return (
     <section
-      className={`relative bg-[url('/images/pattern-bg-mobile.png')] bg-cover py-6 z-10 font-rubik`}
+      className={`relative bg-[url('/images/pattern-bg-mobile.png')] sm:bg-[url('/images/pattern-bg-desktop.png')] bg-cover py-6 z-10 font-rubik`}
     >
       <div className='relative w-[85%] mx-auto flex flex-col items-center'>
         <h1 className='text-2xl text-white font-bold mb-5'>
           IP Address Tracker
         </h1>
-        <div className='mb-28 flex w-full'>
+        <div className='mb-28 flex justify-center w-full'>
           <input
-            className='w-full py-3 px-6 rounded-xl rounded-r-none'
+            className='w-full py-3 px-6 rounded-xl rounded-r-none max-w-sm'
             type='text'
             value={value}
             onChange={handleChange}
@@ -50,7 +50,8 @@ export default function InputSection({
             {'>'}
           </button>
         </div>
-        <div className='flex flex-col justify-evenly gap-5 p-4 text-center bg-white w-full border rounded-xl shadow-md absolute top-[7.5rem] '>
+        {/* <div className='flex flex-col sm:flex-row justify-evenly sm:justify-between sm:text-left gap-5 p-4 sm:py-8 text-center bg-white w-full border rounded-xl shadow-md absolute top-[7.5rem] '> */}
+        <div className='flex flex-col sm:grid sm:grid-cols-4 justify-evenly sm:text-left gap-4 sm:gap-1 p-4 sm:py-8 text-center bg-white w-full border rounded-xl shadow-md absolute top-[7.5rem] sm:top-[10rem] '>
           <div>
             <h3 className='uppercase text-dark-gray font-[700] text-[0.6rem]'>
               ip address
