@@ -17,3 +17,9 @@
   /* Font Family */
   
 }
+
+@layer base {
+  input[placeholder] {
+    text-overflow: ellipsis;
+  }
+}
