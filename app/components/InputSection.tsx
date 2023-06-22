@@ -1,5 +1,19 @@
+'use client';
 
-export default function InputSection() {
+import { ChangeEvent, Dispatch, useState } from 'react';
+
+type Props = {
+  ip: string;
+  setIp: Dispatch<string>;
+};
+
+export default function InputSection({ ip, setIp }: Props) {
+  const [value, setValue] = useState('');
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
+
   return (
     <section
       className={`relative bg-[url('/images/pattern-bg-mobile.png')] bg-cover py-6 z-10 font-rubik`}
@@ -9,8 +23,16 @@ export default function InputSection() {
           IP Address Tracker
         </h1>
         <div className='mb-28 flex w-full'>
-          <input className='w-full py-4 px-6 rounded-xl rounded-r-none' type='text' />
-          <button className='py-4 px-6 bg-black text-white font-bold rounded-xl rounded-l-none'>
+          <input
+            className='w-full py-4 px-6 rounded-xl rounded-r-none'
+            type='text'
+            value={value}
+            onChange={handleChange}
+          />
+          <button
+            className='py-4 px-6 bg-black text-white font-bold rounded-xl rounded-l-none'
+            onClick={() => setIp(value)}
+          >
             {'>'}
           </button>
         </div>
@@ -19,7 +41,7 @@ export default function InputSection() {
             <h3 className='uppercase text-dark-gray font-[700] text-[0.7rem]'>
               ip address
             </h3>
-            <p className='font-bold text-xl'>{'8.8.8.8'}</p>
+            <p className='font-bold text-xl'>{ip}</p>
           </div>
           <div>
             <h3 className='uppercase text-dark-gray font-[700] text-[0.7rem]'>
