@@ -12,8 +12,11 @@ export default async function Home() {
 
   return (
     <main className=''>
-      <div className=''>
+      <div className='relative'>
         <InputSection />
+        <div className='relative z-0'>
+          <Map lat={res.location.lat} lng={res.location.lng} />
+        </div>
       </div>
     </main>
   );

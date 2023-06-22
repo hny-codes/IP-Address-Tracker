@@ -2,7 +2,7 @@
 export default function InputSection() {
   return (
     <section
-      className={`flex flex-col items-center bg-[url('/images/pattern-bg-mobile.png')] bg-cover py-6`}
+      className={`relative flex flex-col items-center bg-[url('/images/pattern-bg-mobile.png')] bg-cover py-6 z-10`}
     >
       <div className='relative'>
         <h1 className='text-3xl text-white font-bold mb-8'>
