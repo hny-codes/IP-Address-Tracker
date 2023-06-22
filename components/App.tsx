@@ -25,7 +25,17 @@ export default function App() {
 
   return (
     <section className='relative'>
-      <InputSection ip={ip} setIp={setIp} />
+      {data && (
+        <InputSection
+          ip={ip}
+          city={data.location.city}
+          region={data.location.region}
+          postalCode={data.location.postalCode}
+          timezone={data.location.timezone}
+          isp={data.isp}
+          setIp={setIp}
+        />
+      )}
       <div className='relative z-0'>
         {data && <Map lat={data.location.lat} lng={data.location.lng} />}
       </div>

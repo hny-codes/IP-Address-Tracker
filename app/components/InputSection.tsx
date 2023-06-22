@@ -4,10 +4,23 @@ import { ChangeEvent, Dispatch, useState } from 'react';
 
 type Props = {
   ip: string;
+  city: string;
+  region: string;
+  postalCode: string;
+  timezone: string;
+  isp: string;
   setIp: Dispatch<string>;
 };
 
-export default function InputSection({ ip, setIp }: Props) {
+export default function InputSection({
+  ip,
+  city,
+  region,
+  postalCode,
+  timezone,
+  isp,
+  setIp,
+}: Props) {
   const [value, setValue] = useState('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -47,19 +60,21 @@ export default function InputSection({ ip, setIp }: Props) {
             <h3 className='uppercase text-dark-gray font-[700] text-[0.7rem]'>
               location
             </h3>
-            <p className='font-bold text-xl'></p>
+            <p className='font-bold text-xl'>
+              {city}, {region} {postalCode}
+            </p>
           </div>
           <div>
             <h3 className='uppercase text-dark-gray font-[700] text-[0.7rem]'>
               timezone
             </h3>
-            <p className='font-bold text-xl'>{}</p>
+            <p className='font-bold text-xl'>UTC {timezone}</p>
           </div>
           <div>
             <h3 className='uppercase text-dark-gray font-[700] text-[0.7rem]'>
               isp
             </h3>
-            <p className='font-bold text-xl'></p>
+            <p className='font-bold text-xl'>{isp}</p>
           </div>
         </div>
       </div>
