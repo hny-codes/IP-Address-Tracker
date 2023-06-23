@@ -24,7 +24,10 @@ const Map = ({ lat, lng }: MapCoord) => {
       center={[lat, lng]}
       zoom={13}
       scrollWheelZoom={true}
-      style={{ height: 400, width: '100%' }}
+      style={{
+        height: `calc(100vh - 236px)`,
+        width: '100%',
+      }}
     >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
