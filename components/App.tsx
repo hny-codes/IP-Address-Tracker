@@ -5,12 +5,20 @@ import dynamic from 'next/dynamic';
 import { getIpLocationData, getClientIpLocationData } from '@/lib/getIpData';
 import InputSection from '@/app/components/InputSection';
 
+const Loading = () => {
+  return (
+    <>
+      <p className='font-rubik font-bold'>A map is loading..</p>
+    </>
+  );
+};
+
 export default function App() {
   const [ip, setIp] = useState('');
   const [data, setData] = useState<IPLocation | null>(null);
 
   const Map = dynamic(() => import('../components/LeafMap'), {
-    loading: () => <p>A map is loading..</p>,
+    loading: () => <Loading />,
     ssr: false,
   });
 
@@ -42,7 +50,9 @@ export default function App() {
           setIp={setIp}
         />
       )}
-      <div className='relative z-0'>
+      <div
+        className={`relative z-0 flex justify-center items-center h-[calc(100vh-236px)]`}
+      >
         {data && <Map lat={data.location.lat} lng={data.location.lng} />}
       </div>
     </div>
