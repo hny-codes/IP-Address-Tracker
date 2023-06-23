@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, Dispatch, useState } from 'react';
+import { ChangeEvent, Dispatch, useState, FormEvent } from 'react';
 
 type Props = {
   ip: string;
@@ -23,15 +23,26 @@ export default function InputSection({
 }: Props) {
   const [value, setValue] = useState('');
 
+  // REFERENCE: https://ihateregex.io/expr/ip/
+  const regex =
+    /(\b25[0-5]|\b2[0-4][0-9]|\b[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}/gm;
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
+  };
+
+  const handleClick = () => {
+    regex.test(value) ? setIp(value) : alert('Not an IP address!');
   };
 
   return (
     <section
       className={`relative bg-[url('/images/pattern-bg-mobile.png')] sm:bg-[url('/images/pattern-bg-desktop.png')] bg-cover py-6 z-10 font-rubik`}
     >
-      <div className='relative w-[85%] mx-auto flex flex-col items-center'>
+      <form
+        className='relative w-[85%] mx-auto flex flex-col items-center'
+        onSubmit={(e) => e.preventDefault()}
+      >
         <h1 className='text-2xl text-white font-bold mb-5'>
           IP Address Tracker
         </h1>
@@ -45,7 +56,8 @@ export default function InputSection({
           />
           <button
             className='py-3 px-6 bg-black text-white font-bold rounded-xl rounded-l-none hover:bg-[var(--clr-very-dark-gray)] transition'
-            onClick={() => setIp(value)}
+            onClick={handleClick}
+            type='submit'
           >
             <svg xmlns='http://www.w3.org/2000/svg' width='11' height='14'>
               <path
@@ -85,7 +97,7 @@ export default function InputSection({
             <p className='font-bold text-lg sm:mt-2'>{isp}</p>
           </div>
         </div>
-      </div>
+      </form>
     </section>
   );
 }
