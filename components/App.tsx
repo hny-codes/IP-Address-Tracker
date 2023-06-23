@@ -24,7 +24,7 @@ export default function App() {
   }, [ip]);
 
   return (
-    <section className='relative'>
+    <div className='relative'>
       {data && (
         <InputSection
           ip={ip}
@@ -39,6 +39,6 @@ export default function App() {
       <div className='relative z-0'>
         {data && <Map lat={data.location.lat} lng={data.location.lng} />}
       </div>
-    </section>
+    </div>
   );
 }
