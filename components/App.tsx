@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import { getIpLocationData } from '@/lib/getIpData';
+import { getIpLocationData, getClientIpLocationData } from '@/lib/getIpData';
 import InputSection from '@/app/components/InputSection';
 
 export default function App() {
-  const [ip, setIp] = useState('8.8.8.8');
+  const [ip, setIp] = useState('');
   const [data, setData] = useState<IPLocation | null>(null);
 
   const Map = dynamic(() => import('../components/LeafMap'), {
@@ -16,8 +16,14 @@ export default function App() {
 
   useEffect(() => {
     async function getData(param: string) {
-      const res: IPLocation = await getIpLocationData(param);
-      setData(res);
+      if (ip) {
+        const res: IPLocation = await getIpLocationData(param);
+        setData(res);
+      } else if (ip === '') {
+        const res: IPLocation = await getClientIpLocationData();
+        setIp(res.ip);
+        setData(res);
+      }
     }
 
     getData(ip);
