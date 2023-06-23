@@ -44,10 +44,17 @@ export default function InputSection({
             placeholder='Search for any IP address or domain'
           />
           <button
-            className='py-3 px-6 bg-black text-white font-bold rounded-xl rounded-l-none'
+            className='py-3 px-6 bg-black text-white font-bold rounded-xl rounded-l-none hover:bg-[var(--clr-very-dark-gray)] transition'
             onClick={() => setIp(value)}
           >
-            {'>'}
+            <svg xmlns='http://www.w3.org/2000/svg' width='11' height='14'>
+              <path
+                fill='none'
+                stroke='#FFF'
+                stroke-width='3'
+                d='M2 1l6 6-6 6'
+              />
+            </svg>
           </button>
         </div>
         <div className='flex flex-col sm:grid sm:grid-cols-4 justify-evenly sm:text-left gap-4 sm:gap-12 p-4 sm:py-8 text-center bg-white w-full border rounded-xl shadow-md absolute top-[7.5rem] sm:top-[8.5rem]'>
