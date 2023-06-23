@@ -37,7 +37,7 @@ export default function InputSection({
         </h1>
         <div className='mb-28 sm:mb-[5.5rem] flex justify-center w-full'>
           <input
-            className='w-full py-3 px-6 rounded-xl rounded-r-none max-w-sm'
+            className='w-full py-3 px-6 rounded-xl rounded-r-none max-w-sm cursor-pointer'
             type='text'
             value={value}
             onChange={handleChange}
