@@ -69,32 +69,38 @@ export default function InputSection({
             </svg>
           </button>
         </div>
-        <div className='flex flex-col sm:grid sm:grid-cols-4 justify-evenly gap-4 sm:gap-2 p-4 sm:py-8 sm:px-0 text-center sm:text-left bg-white w-full sm:max-w-5xl border rounded-xl shadow-md absolute top-[7.5rem] sm:top-[8.5rem] sm:divide-x-2'>
-          <div className='sm:pl-10'>
+        <div className='flex flex-col sm:grid sm:grid-cols-4 justify-evenly gap-4 sm:gap-10 p-4 sm:py-8 sm:px-0 text-center sm:text-left bg-white w-full sm:max-w-6xl border rounded-xl shadow-md absolute top-[7.5rem] sm:top-[8.5rem] sm:divide-x-2'>
+          <div className='sm:pl-8 sm:pr:4'>
             <h3 className='uppercase text-dark-gray font-[700] text-[0.6rem]'>
               ip address
             </h3>
-            <p className='font-bold text-lg sm:mt-2'>{ip}</p>
+            <p className='font-bold text-lg sm:mt-2 overflow-hidden overflow-ellipsis'>
+              {ip}
+            </p>
           </div>
-          <div className='sm:pl-10'>
+          <div className='sm:pl-8 sm:pr:4'>
             <h3 className='uppercase text-dark-gray font-[700] text-[0.6rem]'>
               location
             </h3>
-            <p className='font-bold text-lg sm:mt-2'>
+            <p className='font-bold text-lg sm:mt-2 overflow-hidden overflow-ellipsis'>
               {city}, {region} {postalCode}
             </p>
           </div>
-          <div className='sm:pl-10'>
+          <div className='sm:pl-8 sm:pr:4'>
             <h3 className='uppercase text-dark-gray font-[700] text-[0.6rem]'>
               timezone
             </h3>
-            <p className='font-bold text-lg sm:mt-2'>UTC {timezone}</p>
+            <p className='font-bold text-lg sm:mt-2 overflow-hidden overflow-ellipsis'>
+              UTC {timezone}
+            </p>
           </div>
-          <div className='sm:pl-10'>
+          <div className='sm:pl-8 sm:pr:4'>
             <h3 className='uppercase text-dark-gray font-[700] text-[0.6rem]'>
               isp
             </h3>
-            <p className='font-bold text-lg sm:mt-2'>{isp}</p>
+            <p className='font-bold text-lg sm:mt-2 overflow-hidden overflow-ellipsis'>
+              {isp}
+            </p>
           </div>
         </div>
       </form>
