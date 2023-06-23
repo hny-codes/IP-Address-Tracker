@@ -23,6 +23,7 @@ const Map = ({ lat, lng }: MapCoord) => {
     <MapContainer
       center={[lat, lng]}
       zoom={13}
+      zoomControl={false}
       scrollWheelZoom={true}
       style={{
         height: `calc(100vh - 236px)`,
