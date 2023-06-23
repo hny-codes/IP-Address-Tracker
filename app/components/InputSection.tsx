@@ -35,6 +35,12 @@ export default function InputSection({
     regex.test(value) ? setIp(value) : alert('Not an IP address!');
   };
 
+  const handleEnter = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (e.code === '13') {
+      handleClick();
+    }
+  };
+
   return (
     <section
       className={`relative bg-[url('/images/pattern-bg-mobile.png')] sm:bg-[url('/images/pattern-bg-desktop.png')] bg-cover py-6 z-10 font-rubik`}
@@ -57,6 +63,7 @@ export default function InputSection({
           <button
             className='py-3 px-6 bg-black text-white font-bold rounded-xl rounded-l-none hover:bg-[var(--clr-very-dark-gray)] transition'
             onClick={handleClick}
+            onKeyDown={handleEnter}
             type='submit'
           >
             <svg xmlns='http://www.w3.org/2000/svg' width='11' height='14'>
