@@ -2,6 +2,8 @@
 
 This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). 
 
+Blog write-up [here](https://hny-blogs.vercel.app/posts/ip-address-tracker).
+
 ## Table of Contents
 - [Overview](#overview)
   - [The Challenge](#the-challenge)
